@@ -1,0 +1,29 @@
+{
+  "name": "please",
+  "version": "1.0.0",
+  "description": "A small and modern AJAX library.",
+  "main": "please.js",
+  "scripts": {
+    "test": "echo 'No tests yet :('"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danreeves/please.git"
+  },
+  "keywords": [
+    "please",
+    "get",
+    "post",
+    "put",
+    "delete",
+    "form",
+    "upload",
+    "ajax"
+  ],
+  "author": "Dan Reeves <hey@danreev.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danreeves/please/issues"
+  },
+  "homepage": "https://github.com/danreeves/please"
+}
