@@ -1,6 +1,7 @@
 # Please
 > A small and modern AJAX library.
 
+[![NPM](https://nodei.co/npm/please-ajax.png)](https://nodei.co/npm/please-ajax/)
 [![Build Status](https://travis-ci.org/danreeves/please.svg?branch=master)](https://travis-ci.org/danreeves/please)
 
 ## Features
