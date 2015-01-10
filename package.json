@@ -1,5 +1,5 @@
 {
-  "name": "please",
+  "name": "please-ajax",
   "version": "1.0.0",
   "description": "A small and modern AJAX library.",
   "main": "dist/please.js",
