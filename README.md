@@ -1,4 +1,4 @@
-# Please
+> # Please
 > A small and modern AJAX library.
 
 [![NPM](https://nodei.co/npm/please-ajax.png)](https://nodei.co/npm/please-ajax/)
