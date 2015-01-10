@@ -4,3 +4,4 @@ node_js:
 before_script:
   - npm install -g gulp
 script: gulp tests
+after_success: cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js

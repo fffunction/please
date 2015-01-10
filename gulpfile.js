@@ -1,10 +1,11 @@
 'use strict';
-var gulp   = require('gulp'),
-    header = require('gulp-header'),
-    jshint = require('gulp-jshint'),
-    mocha  = require('gulp-mocha'),
-    rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
+var gulp     = require('gulp'),
+    mocha    = require('gulp-mocha'),
+    header   = require('gulp-header'),
+    jshint   = require('gulp-jshint'),
+    rename   = require('gulp-rename'),
+    uglify   = require('gulp-uglify'),
+    istanbul = require('gulp-istanbul');
 
 var pkg = require('./package.json'),
     banner = ['/**',
@@ -35,11 +36,16 @@ gulp.task('build', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('mocha', function () {
-    return gulp.src('tests/*.js', {
-            read: false
-        })
-        .pipe(mocha({reporter: 'nyan'}));
+gulp.task('mocha', function (cb) {
+    gulp.src('src/*.js')
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire())
+        .on('finish', function () {
+            gulp.src(['tests/*.js'])
+                .pipe(mocha())
+                .pipe(istanbul.writeReports())
+                .on('end', cb);
+        });
 });
 
 

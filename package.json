@@ -28,8 +28,10 @@
   "homepage": "https://github.com/danreeves/please",
   "dependencies": {},
   "devDependencies": {
+    "codecov.io": "0.0.8",
     "gulp": "^3.8.10",
     "gulp-header": "^1.2.2",
+    "gulp-istanbul": "^0.5.0",
     "gulp-jshint": "^1.9.0",
     "gulp-mocha": "^2.0.0",
     "gulp-rename": "^1.2.0",
