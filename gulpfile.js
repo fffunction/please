@@ -43,5 +43,5 @@ gulp.task('mocha', function () {
 });
 
 
-gulp.task('travis', ['jshint', 'mocha']);
+gulp.task('tests', ['jshint', 'mocha']);
 gulp.task('default', ['jshint', 'mocha', 'build']);
