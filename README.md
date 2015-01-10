@@ -21,7 +21,7 @@ Supports modern browsers and IE9+. IE9 requires an ugly hack with a iframe in or
 Basic:
 
 ```
-var plz = require('please')(window);
+var plz = require('please-ajax')(window);
 
 plz.get('http://danreev.es/', {
     success: function (d) {
