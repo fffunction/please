@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danreeves/please.git"
+    "url": "https://github.com/fffunction/please.git"
   },
   "keywords": [
     "please",
@@ -20,12 +20,16 @@
     "form",
     "ajax"
   ],
-  "author": "Dan Reeves <hey@danreev.es>",
+  "author": "Dan Reeves <hey@danreev.es> (http://danreev.es/)",
+  "contributors": [
+    "fffunction <dev@fffunction.co> (http://fffunction.co/)",
+    "Dan Reeves <hey@danreev.es> (http://danreev.es/)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danreeves/please/issues"
+    "url": "https://github.com/fffunction/please/issues"
   },
-  "homepage": "https://github.com/danreeves/please",
+  "homepage": "https://github.com/fffunction/please",
   "dependencies": {},
   "devDependencies": {
     "codecov.io": "0.0.8",
