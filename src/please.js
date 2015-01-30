@@ -32,8 +32,18 @@
             progress: opts.progress || function () {},
             load: opts.load || function () {}
         },
-        request;
-        if (options.fileForm && typeof data === 'string') {
+        request,
+        isString = typeof data === 'string',
+        isJSON = false;
+        if (isString) {
+            try {
+                isJSON = !!JSON.parse(data);
+            } catch (e) {
+                isJSON = false;
+            }
+        }
+        // IE9 Form Upload
+        if (options.fileForm && isString) {
             var iframe  = document.createElement('iframe');
             request = {
                 readyState: false,
@@ -71,7 +81,10 @@
             request = new XHR('MSXML2.XMLHTTP.3.0');
             request.open(type, url, true);
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            if (typeof data === 'string') request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            if (isString) {
+                if (isJSON) request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                else request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+            }
             if (!!request.upload) {
                 request.upload.addEventListener('loadstart', options.loadstart, false);
                 request.upload.addEventListener('progress', options.progress, false);
