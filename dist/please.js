@@ -1,6 +1,6 @@
 /**
  * please-ajax - A small and modern AJAX library.
- * @version v1.0.4
+ * @version v1.0.6
  * @author Dan Reeves <hey@danreev.es> (http://danreev.es/)
  * @link https://github.com/fffunction/please
  * @license MIT
@@ -99,7 +99,7 @@
             }
             request.onreadystatechange = function () {
                 if (request.readyState === 4) {
-                    if (request.status === 200) {
+                    if (request.status >= 200 && request.status < 300) {
                         options.success(parse(request));
                     } else {
                         options.error(parse(request));
@@ -110,7 +110,7 @@
         if (!!root.Promise && options.promise) {
             return new Promise(function(resolve, reject) {
                 request.onload = function() {
-                    if (request.status == 200) {
+                    if (request.status >= 200 && request.status < 300) {
                         resolve(request.response);
                     }
                     else {
