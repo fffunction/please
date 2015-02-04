@@ -26,6 +26,7 @@
         var options = {
             fileForm: opts.fileForm || false,
             promise: opts.promise || false,
+            headers: opts.headers || {},
             success: opts.success || function () {},
             error: opts.error || function () {},
             loadstart: opts.loadstart || function () {},
@@ -99,6 +100,11 @@
                     }
                 }
             };
+        }
+        for (var header in options.headers) {
+            if (options.headers.hasOwnProperty(header)) {
+                request.setRequestHeader(header, options.headers[header]);
+            }
         }
         if (!!root.Promise && options.promise) {
             return new Promise(function(resolve, reject) {
