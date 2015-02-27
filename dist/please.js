@@ -1,6 +1,6 @@
 /**
  * please-ajax - A small and modern AJAX library.
- * @version v1.0.7
+ * @version v1.0.8
  * @author Dan Reeves <hey@danreev.es> (http://danreev.es/)
  * @link https://github.com/fffunction/please
  * @license MIT
@@ -144,6 +144,11 @@
     exports['put'] = function put (url, data, opts) {
         var options = opts || {};
         return xhr('PUT', url, data, options);
+    };
+
+    exports['patch'] = function patch (url, data, opts) {
+        var options = opts || {};
+        return xhr('PATCH', url, data, options);
     };
 
     exports['post'] = function post (url, data, opts) {

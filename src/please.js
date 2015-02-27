@@ -139,6 +139,11 @@
         return xhr('PUT', url, data, options);
     };
 
+    exports['patch'] = function patch (url, data, opts) {
+        var options = opts || {};
+        return xhr('PATCH', url, data, options);
+    };
+
     exports['post'] = function post (url, data, opts) {
         var options = opts || {};
         return xhr('POST', url, data, options);
