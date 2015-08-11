@@ -31,7 +31,7 @@ var plz = require('please-ajax');
 
 ## Support
 
-Supports modern browsers and IE9+. IE9 requires an ugly hack with a iframe in order to do file uploads, and therefore doesn't support the same events. More on that later.
+Supports modern browsers and IE9+. IE9 requires an ugly hack with a iframe in order to do file uploads, and therefore doesn't support the same events. [How to handle IE9 form uploads](#ie9-form-uploads).
 
 ## Usage
 
@@ -110,3 +110,19 @@ Alias to please.delete because some browsers won't let you use the delete keywor
     load:      function () {}  // On load handler for file uploads
 }
 ```
+
+### IE9 form uploads
+
+To support IE9 AJAX uploads, you need to post the form to hidden iframe. Please handles all of that for you but requires two things.
+
+Firstly, it posts the form to the supplied URL with `?ie9` appended. It then checks for that page to contain a `200` message. This is how please knows that the upload has been successful, otherwise it's considered a failure (e.g 500).
+
+The code currently doesn't support a URL that already has GET parameters, is fairly strict in what it expects, and requires a condition on the server side to support IE9 AJAX uploads. 💀
+
+Pull requests welcome!
+
+[Read the related code](https://github.com/fffunction/please/blob/3dcf7fda1bd9ecd4a888d1ed24543e9f2b3d743c/src/please.js#L37-L71)
+
+[Create an issue](https://github.com/fffunction/please/issues/new?title=wat)
+
+[Ask the maintainer](https://twitter.com/intent/tweet?text=please-ajax is broken!!!)
