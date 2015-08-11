@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require('assert'),
-    please = require('../dist/please.js')();
+    please = require('../dist/please.js');
 
 
 describe('please', function () {

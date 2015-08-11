@@ -1,20 +1,11 @@
 /**
  * please-ajax - A small and modern AJAX library.
- * @version v1.0.8
+ * @version v2.0.0
  * @author Dan Reeves <hey@danreev.es> (http://danreev.es/)
  * @link https://github.com/fffunction/please
  * @license MIT
  */
-(function (root, factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory;
-    } else {
-        root.please = factory(root);
-    }
-})(this, function (root) {
+(function () {
     'use strict';
 
     var exports = {};
@@ -85,7 +76,7 @@
                 }
             };
         } else {
-            var XHR = root.XMLHttpRequest || ActiveXObject;
+            var XHR = window.XMLHttpRequest || ActiveXObject;
             request = new XHR('MSXML2.XMLHTTP.3.0');
             request.open(type, url, true);
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -113,7 +104,7 @@
                 request.setRequestHeader(header, options.headers[header]);
             }
         }
-        if (!!root.Promise && options.promise) {
+        if (!!window.Promise && options.promise) {
             return new Promise(function(resolve, reject) {
                 request.onload = function() {
                     if (request.status >= 200 && request.status < 300) {
@@ -161,6 +152,12 @@
         return xhr('DELETE', url, false, options);
     };
 
-    return exports;
+    if (typeof define === 'function' && define['amd']) {
+      define(function() { return exports; });
+    } else if (typeof module !== 'undefined' && module['exports']) {
+      module['exports'] = exports;
+    } else if (typeof this !== 'undefined') {
+      this['please'] = exports;
+    }
 
-});
+}).call(this);

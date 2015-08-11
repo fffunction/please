@@ -5,6 +5,22 @@
 
 [![Build Status](https://travis-ci.org/fffunction/please.svg?branch=master)](https://travis-ci.org/fffunction/please)
 
+## Breaking changes in 2.0.0
+
+It's no longer necessary to init with the window value. The library now references the window directly, since it'll always be used in a browser.
+
+Old syntax:
+
+```
+var plz = require('please-ajax')(window);
+```
+
+New syntax:
+
+```
+var plz = require('please-ajax');
+```
+
 ## Features
 
  - Small
@@ -25,7 +41,7 @@ Demo:
 Basic:
 
 ```
-var plz = require('please-ajax')(window);
+var plz = require('please-ajax');
 
 plz.get('http://danreev.es/', {
     success: function (d) {
