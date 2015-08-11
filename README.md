@@ -125,4 +125,4 @@ Pull requests welcome!
 
 [Create an issue](https://github.com/fffunction/please/issues/new?title=wat)
 
-[Ask the maintainer](https://twitter.com/intent/tweet?text=please-ajax is broken!!!)
+[Ask the maintainer](https://twitter.com/intent/tweet?text=%40heydanreeves+%40fffunction+please-ajax+is+broken!!!)
