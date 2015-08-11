@@ -36,7 +36,7 @@ Supports modern browsers and IE9+. IE9 requires an ugly hack with a iframe in or
 ## Usage
 
 Demo:
-[![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/?gist=59b4b7827f3dfa3ac81c)
+[![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/?gist=d88339076f95291bfddb)
 
 Basic:
 
