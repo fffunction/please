@@ -122,7 +122,7 @@
 
     exports['get'] = function get (url, opts) {
         var options = opts || {};
-        return xhr('GET', url, false, options);
+        return xhr('GET', url, undefined, options);
     };
 
     exports['put'] = function put (url, data, opts) {
