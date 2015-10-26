@@ -149,7 +149,7 @@
 
     exports['del'] = exports['delete'] = function del (url, opts) {
         var options = opts || {};
-        return xhr('DELETE', url, false, options);
+        return xhr('DELETE', url, undefined, options);
     };
 
     if (typeof define === 'function' && define['amd']) {
