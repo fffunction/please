@@ -101,7 +101,7 @@
             return new Promise(function(resolve, reject) {
                 request.onload = function() {
                     if (request.status >= 200 && request.status < 300) {
-                        resolve(request.response);
+                        request.response ? resolve(request.response) : resolve(request.responseText);
                     }
                     else {
                         reject(Error(request.statusText));
