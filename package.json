@@ -20,10 +20,10 @@
     "form",
     "ajax"
   ],
-  "author": "Dan Reeves <hey@danreev.es> (http://danreev.es/)",
+  "author": "Dan Reeves <danr@fffunction.co> (http://fffunction.co/)",
   "contributors": [
-    "fffunction <dev@fffunction.co> (http://fffunction.co/)",
-    "Dan Reeves <hey@danreev.es> (http://danreev.es/)"
+    "Russell Kirkland <russell@fffunction.co> (http://fffunction.co/)",
+    "Dan Reeves <danr@fffunction.co> (http://fffunction.co/)"
   ],
   "license": "MIT",
   "bugs": {

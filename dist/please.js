@@ -1,7 +1,7 @@
 /**
  * please-ajax - A small and modern AJAX library.
  * @version v2.0.2
- * @author Dan Reeves <hey@danreev.es> (http://danreev.es/)
+ * @author Dan Reeves <danr@fffunction.co> (http://fffunction.co/)
  * @link https://github.com/fffunction/please
  * @license MIT
  */
