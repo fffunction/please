@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "semi": [1, "always"],
+        "indent": [1, 4],
+        "space-before-function-paren": [1, {"anonymous": "always", "named": "always"}],
+        "no-console": 0,
+        "padded-blocks": 0,
+        "no-empty": 0,
+        "strict": 0,
+        "no-var": 0,
+        "one-var": [2, {
+            "uninitialized": "always", // Exactly one declaration for uninitialized variables per function (var) or block (let or const)
+            "initialized": "never" // Exactly one declarator per initialized variable declaration per function (var) or block (let or const)
+        }]
+    }
+}
