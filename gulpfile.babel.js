@@ -1,28 +1,26 @@
-'use strict';
-var gulp     = require('gulp'),
-    header   = require('gulp-header'),
-    jshint   = require('gulp-jshint'),
-    rename   = require('gulp-rename'),
-    eslint   = require('gulp-eslint'),
-    ava      = require('gulp-ava'),
-    uglify   = require('gulp-uglify');
+import gulp from 'gulp';
+import header from 'gulp-header';
+import rename from 'gulp-rename';
+import eslint from 'gulp-eslint';
+import ava from 'gulp-ava';
+import uglify from 'gulp-uglify';
 
-var pkg = require('./package.json'),
-    banner = ['/**',
-              ' * <%= pkg.name %> - <%= pkg.description %>',
-              ' * @version v<%= pkg.version %>',
-              ' * @author <%= pkg.author %>',
-              ' * @link <%= pkg.homepage %>',
-              ' * @license <%= pkg.license %>',
-              ' */',
-              ''].join('\n');
+const pkg = require('./package.json');
+const banner = ['/**',
+                ' * <%= pkg.name %> - <%= pkg.description %>',
+                ' * @version v<%= pkg.version %>',
+                ' * @author <%= pkg.author %>',
+                ' * @link <%= pkg.homepage %>',
+                ' * @license <%= pkg.license %>',
+                ' */',
+                ''].join('\n');
 
-gulp.task('lint', function () {
+gulp.task('lint', () => {
     // ESLint ignores files with "node_modules" paths.
     // So, it's best to have gulp ignore the directory as well.
     // Also, Be sure to return the stream from the task;
     // Otherwise, the task may end before the stream has finished.
-    return gulp.src(['src/*.js','!node_modules/**'])
+    return gulp.src(['src/*.js', '!node_modules/**'])
         // eslint() attaches the lint output to the "eslint" property
         // of the file object so it can be used by other modules.
         .pipe(eslint())
@@ -34,16 +32,16 @@ gulp.task('lint', function () {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('test', function () {
+gulp.task('test', () => {
     return gulp.src('test/*.js')
         // gulp-ava needs filepaths so you can't have any plugins before it
         .pipe(ava());
 });
 
-gulp.task('build', function () {
+gulp.task('build', () => {
     return gulp.src('src/*.js')
         .pipe(header(banner, {
-            pkg: pkg
+            pkg: pkg,
         }))
         .pipe(gulp.dest('dist'))
         .pipe(uglify())
