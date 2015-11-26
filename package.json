@@ -4,7 +4,11 @@
   "description": "A small and modern AJAX library.",
   "main": "dist/please.js",
   "scripts": {
-    "test": "gulp tests"
+    "start": "npm run watch",
+    "build": "gulp",
+    "watch": "gulp watch",
+    "test": "nyc ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -33,6 +37,7 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "0.6.1",
+    "coveralls": "2.11.4",
     "eslint": "1.10.1",
     "eslint-config-airbnb": "1.0.0",
     "eslint-plugin-react": "3.10.0",
